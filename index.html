@@ -472,10 +472,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-02-15 19:40:08 / Modified: 19:41:52" itemprop="dateCreated datePublished" datetime="2025-02-15T19:40:08+08:00">2025-02-15</time>
+              <time title="Created: 2025-02-15 19:40:08" itemprop="dateCreated datePublished" datetime="2025-02-15T19:40:08+08:00">2025-02-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-02-18 00:01:02" itemprop="dateModified" datetime="2025-02-18T00:01:02+08:00">2025-02-18</time>
+              </span>
 
           
 
@@ -504,14 +510,18 @@
 <p>什么水平：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/10666202502/answer/89907687711">https://www.zhihu.com/question/10666202502/answer/89907687711</a></p>
 <p>直观参数量：<a target="_blank" rel="noopener" href="https://yangwenbo.com/articles/deepseek-v3-parameter-size.html">https://yangwenbo.com/articles/deepseek-v3-parameter-size.html</a></p>
 <p>EP TP 通信量：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/13997146226">https://zhuanlan.zhihu.com/p/13997146226</a></p>
-<p>通信分析 + grouped gemm 优化建议</p>
+<p>通信分析 + 训练时 grouped gemm 优化建议</p>
 <p>ring_reduce &#x3D; reduce_scatter + all_gather：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/617133971">https://zhuanlan.zhihu.com/p/617133971</a> </p>
 <p>所以 TP 的同步 all reduce 需要先从每张卡上求和得到自己卡上的数据，再同步其余卡上的求和结果</p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/16704076805">https://zhuanlan.zhihu.com/p/16704076805</a></p>
 <p>SGL walk through：</p>
 <p>![截图 2025-02-13 21-52-51](assets&#x2F;截图 2025-02-13 21-52-51.png)</p>
+<p>P:D &#x3D; 1:10：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/8531371805/answer/70643107756">https://www.zhihu.com/question/8531371805/answer/70643107756</a></p>
+<p>什么是 Grouped GEMM：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/484319691">https://zhuanlan.zhihu.com/p/484319691</a></p>
 <p>Triton：</p>
 <p>如果调用 JIT 编译的函数入参具有 .data_ptr() 方法和 .dtype 属性，则会隐式转换为指针。</p>
+<p>exp2：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/6874512980/answer/85865475090">https://www.zhihu.com/question/6874512980/answer/85865475090</a> 参看其他回答可能还能防止精度下溢</p>
+<p>指针块：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/639423790">https://zhuanlan.zhihu.com/p/639423790</a></p>
 <h4 id="1-LLM"><a href="#1-LLM" class="headerlink" title="1.LLM"></a>1.LLM</h4><h5 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h5><p>special tokens：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/17052593700">https://zhuanlan.zhihu.com/p/17052593700</a></p>
 <p>TPS QPS 并发数 吞吐量： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/337708438">https://zhuanlan.zhihu.com/p/337708438</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">并发数 = QPS*平均响应时间</span><br></pre></td></tr></table></figure>
@@ -544,9 +554,13 @@
 <p>BN 是 所有 token 的每个特征 ；LN 是每个 token 的所有特征</p>
 <p>CUDA Core or Tensor Core： <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/636533414/answer/3345355574">https://www.zhihu.com/question/636533414/answer/3345355574</a></p>
 <p>MFU &amp; HFU： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/671537309">https://zhuanlan.zhihu.com/p/671537309</a></p>
-<p>GPU 通信技术： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/693806383">https://zhuanlan.zhihu.com/p/693806383</a></p>
+<p>NCCL 环境变量：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/598730156/answer/3187578933">https://www.zhihu.com/question/598730156/answer/3187578933</a></p>
+<p>NVLink 提升：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/654832546/answer/71647384740">https://www.zhihu.com/question/654832546/answer/71647384740</a></p>
+<p>4090 快于 A100：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/615946801/answer/90445392759">https://www.zhihu.com/question/615946801/answer/90445392759</a></p>
+<p>避免隐式 CUDA 同步：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/67209417/answer/3459890650">https://www.zhihu.com/question/67209417/answer/3459890650</a></p>
 <p>A800 训练不收敛： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/701623664">https://zhuanlan.zhihu.com/p/701623664</a></p>
 <p>昇腾精度 debug：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/15940824171">https://zhuanlan.zhihu.com/p/15940824171</a></p>
+<p>千卡超时：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/712505336">https://zhuanlan.zhihu.com/p/712505336</a></p>
 <p>continuous batching： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/688551989">https://zhuanlan.zhihu.com/p/688551989</a></p>
 <p>bandwidthTest：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/703039225">https://zhuanlan.zhihu.com/p/703039225</a></p>
 <p>Pinned &amp; Pageable memory：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/662795350/answer/3576429708">https://www.zhihu.com/question/662795350/answer/3576429708</a></p>
@@ -1034,10 +1048,16 @@ Flash decoding： </p>
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-02-15 19:40:08 / Modified: 21:03:38" itemprop="dateCreated datePublished" datetime="2025-02-15T19:40:08+08:00">2025-02-15</time>
+              <time title="Created: 2025-02-15 19:40:08" itemprop="dateCreated datePublished" datetime="2025-02-15T19:40:08+08:00">2025-02-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-02-17 16:45:23" itemprop="dateModified" datetime="2025-02-17T16:45:23+08:00">2025-02-17</time>
+              </span>
 
           
 
@@ -1109,13 +1129,15 @@ Flash decoding： </p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/263777564">https://zhuanlan.zhihu.com/p/263777564</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/273729929">https://zhuanlan.zhihu.com/p/273729929</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/288541909">https://zhuanlan.zhihu.com/p/288541909</a></p>
-<h4 id="4-Docker-VSCode"><a href="#4-Docker-VSCode" class="headerlink" title="4.Docker &amp; VSCode"></a>4.Docker &amp; VSCode</h4><p>docker pull：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2485043">https://cloud.tencent.com/developer/article/2485043</a></p>
+<h4 id="4-Docker-VSCode"><a href="#4-Docker-VSCode" class="headerlink" title="4.Docker &amp; VSCode"></a>4.Docker &amp; VSCode</h4><p>vscode docker 插件权限：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/680737356">https://zhuanlan.zhihu.com/p/680737356</a></p>
+<p>docker pull：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2485043">https://cloud.tencent.com/developer/article/2485043</a></p>
 <p>修复 25.04 plucky 无 release 文件，无法更新源，尤其常发生在 manual 显卡驱动后：</p>
 <p>&#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F; 删除过时的 docker 相关</p>
-<p>Error response from daemon: could not select device driver “” with capabilities: [[gpu]]</p>
+<p>完美解决 Error response from daemon: could not select device driver “” with capabilities: [[gpu]]</p>
+<p><a target="_blank" rel="noopener" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html</a> 装 nvidia-container-toolkit</p>
 <p>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</p>
 <p>sudo apt-get install -y nvidia-container-toolkit</p>
-<p>根据教程 vim &#x2F;etc&#x2F;os-release 修改为 24.10 jammy &amp; systemctl daemon-reload &amp; restart docker 即可</p>
+<p>根据教程 vim &#x2F;etc&#x2F;os-release 修改为 24.10 jammy &amp; systemctl daemon-reload &amp; systemctl restart docker 即可</p>
 <p>openvino c++：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/21055820472">https://zhuanlan.zhihu.com/p/21055820472</a></p>
 <p>Error response from daemon： could not select device driver： <a target="_blank" rel="noopener" href="https://blog.csdn.net/li4692625/article/details/123015840">https://blog.csdn.net/li4692625/article/details/123015840</a></p>
 <p>修改ssh默认端口： <a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1253389">https://developer.aliyun.com/article/1253389</a></p>
