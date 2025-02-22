@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="– [0.Errors](# 0.Errors) – [2.Math](# 2.Math) – [4.语音](# 4.语音) – [6.Docker &amp; VSCode](# 6.Docker &amp; VSCode) – [7.Git](# 7.Git) Gameboy： https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;676908347 程序员的护城河： https:&#x2F;&#x2F;ww">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Misc">
+<meta property="og:url" content="http://example.com/2025/02/22/Misc/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="– [0.Errors](# 0.Errors) – [2.Math](# 2.Math) – [4.语音](# 4.语音) – [6.Docker &amp; VSCode](# 6.Docker &amp; VSCode) – [7.Git](# 7.Git) Gameboy： https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;676908347 程序员的护城河： https:&#x2F;&#x2F;ww">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-02-22T11:58:33.000Z">
+<meta property="article:modified_time" content="2025-02-22T12:09:38.548Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Misc">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2025/02/22/Misc/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Misc | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/22/Misc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Misc
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-02-22 19:58:33 / Modified: 20:09:38" itemprop="dateCreated datePublished" datetime="2025-02-22T19:58:33+08:00">2025-02-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>– [0.Errors](# 0.Errors)</p>
+<p>– [2.Math](# 2.Math)</p>
+<p>– [4.语音](# 4.语音)</p>
+<p>– [6.Docker &amp; VSCode](# 6.Docker &amp; VSCode)</p>
+<p>– [7.Git](# 7.Git)</p>
+<p>Gameboy： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/676908347">https://zhuanlan.zhihu.com/p/676908347</a></p>
+<p>程序员的护城河： <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/604014261/answer/3179844243">https://www.zhihu.com/question/604014261/answer/3179844243</a></p>
+<p>男人老了的标志是什么： <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/515229945/answer/2708757895">https://www.zhihu.com/question/515229945/answer/2708757895</a></p>
+<p>如何看待自己终有一天会死去： <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/23178728/answer/2682474442">https://www.zhihu.com/question/23178728/answer/2682474442</a></p>
+<p>我在贵司这三年： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/654508101">https://zhuanlan.zhihu.com/p/654508101</a></p>
+<p>什么是人生的最顶级享受： <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/538449801/answer/2939200080">https://www.zhihu.com/question/538449801/answer/2939200080</a></p>
+<p>被人真心爱着（爱过）是什么感觉： <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/55774089/answer/3236902813">https://www.zhihu.com/question/55774089/answer/3236902813</a></p>
+<p>为什么我特别讨厌情绪价值这个词： <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/653121998/answer/3476785222">https://www.zhihu.com/question/653121998/answer/3476785222</a></p>
+<p>妙趣横生的水文： <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/537342945/answer/2640347949">https://www.zhihu.com/question/537342945/answer/2640347949</a></p>
+<p>用词精准： <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/630165959/answer/3497967251">https://www.zhihu.com/question/630165959/answer/3497967251</a></p>
+<p>理性的偏见： <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/31871242/answer/3487653703">https://www.zhihu.com/question/31871242/answer/3487653703</a></p>
+<p>30 岁的人生道理：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/419127632/answer/3104096147">https://www.zhihu.com/question/419127632/answer/3104096147</a></p>
+<p>谈恋爱：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/658903348/answer/89212476815">https://www.zhihu.com/question/658903348/answer/89212476815</a></p>
+<h4 id="1-Errors"><a href="#1-Errors" class="headerlink" title="1.Errors"></a>1.Errors</h4><p>清除僵尸显存：</p>
+<p>fuser -v &#x2F;dev&#x2F;nvidia1 | xargs -t -n 1 kill -9</p>
+<p>ps -ef | grep ‘python’ | grep -v grep | awk ‘{print $2}’ | xargs kill -9</p>
+<p>chrome keyring： <a target="_blank" rel="noopener" href="https://forum.manjaro.org/t/how-do-i-disable-enter-password-for-default-keyring-when-opening-google-chrome/76405">https://forum.manjaro.org/t/how-do-i-disable-enter-password-for-default-keyring-when-opening-google-chrome/76405</a></p>
+<p>&#x2F;dev&#x2F;sda1：clean &amp; nvrm can’t find an irq for your nvidia card： <a target="_blank" rel="noopener" href="https://askubuntu.com/questions/214504/splash-screen-flickers-during-every-boot/1386363#1386363">https://askubuntu.com/questions/214504/splash-screen-flickers-during-every-boot/1386363#1386363</a></p>
+<p>host key verifications failed：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wd2014610/article/details/85639741">https://blog.csdn.net/wd2014610/article/details/85639741</a></p>
+<p>hexo archive 404：<a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settings/custom-pages">https://theme-next.js.org/docs/theme-settings/custom-pages</a></p>
+<p>VPN：<a target="_blank" rel="noopener" href="https://www.duyaoss.com/archives/3/">https://www.duyaoss.com/archives/3/</a></p>
+<p> <a target="_blank" rel="noopener" href="https://mxwljsq.xyz/user/shop">https://mxwljsq.xyz/user/shop</a></p>
+<h4 id="2-Ubuntu"><a href="#2-Ubuntu" class="headerlink" title="2.Ubuntu"></a>2.Ubuntu</h4><p>dpkg 依赖究极解法：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/291606128/answer/1194596591">https://www.zhihu.com/question/291606128/answer/1194596591</a></p>
+<p>文件管理卡死 nautilus： <a target="_blank" rel="noopener" href="https://blog.csdn.net/u010712012/article/details/89892702">https://blog.csdn.net/u010712012/article/details/89892702</a></p>
+<p>90s： <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44333320/article/details/134704863">https://blog.csdn.net/qq_44333320/article/details/134704863</a></p>
+<p>failed to grab modset ownership： <a target="_blank" rel="noopener" href="https://blog.csdn.net/CC__Vbird__YDD/article/details/128986599">https://blog.csdn.net/CC__Vbird__YDD/article/details/128986599</a></p>
+<p>恢复 Downloads 文件夹：<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1321623/accidentally-deleted-the-downloads-folder">https://askubuntu.com/questions/1321623/accidentally-deleted-the-downloads-folder</a></p>
+<p>du -ah –max-depth&#x3D;1 ~ | sort -n 可以去掉~</p>
+<p>完美卸载Ubuntu：<a target="_blank" rel="noopener" href="https://blog.csdn.net/ZChen1996/article/details/115436436">https://blog.csdn.net/ZChen1996/article/details/115436436</a></p>
+<p>debain unable to bind to codec,导致无法开机： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2a1cce843983">https://www.jianshu.com/p/2a1cce843983</a></p>
+<p>win10文件夹只读属性无法去除怎么修改： <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/409460098">https://www.zhihu.com/question/409460098</a></p>
+<p>Ubuntu软件和更新无响应： <a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1271611/app-software-updates-not-responding">https://askubuntu.com/questions/1271611/app-software-updates-not-responding</a></p>
+<p>apt update no release： <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46412818/article/details/116806127">https://blog.csdn.net/weixin_46412818/article/details/116806127</a></p>
+<p>完美解决关机左上角光标闪烁： <a target="_blank" rel="noopener" href="https://blog.csdn.net/X_T_S/article/details/110144658">https://blog.csdn.net/X_T_S/article/details/110144658</a></p>
+<p>wayland： <a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1488844/ubuntu-22-04-boots-to-a-black-screen-with-a-visible-cursor">https://askubuntu.com/questions/1488844/ubuntu-22-04-boots-to-a-black-screen-with-a-visible-cursor</a></p>
+<p>deprecated key： <a target="_blank" rel="noopener" href="https://forums.insynchq.com/t/apt-key-deprecation-with-workaround/18100">https://forums.insynchq.com/t/apt-key-deprecation-with-workaround/18100</a></p>
+<p>override dns：<a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/588658/override-ubuntu-20-04-dns-using-systemd-resolved">https://unix.stackexchange.com/questions/588658/override-ubuntu-20-04-dns-using-systemd-resolved</a></p>
+<p>systemd-journald crash： <a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1173738/crash-systemd-journal-failed-to-write-entry-ignoring-read-only-file-system-on">https://askubuntu.com/questions/1173738/crash-systemd-journal-failed-to-write-entry-ignoring-read-only-file-system-on</a></p>
+<p>升级内核： <a target="_blank" rel="noopener" href="https://itsfoss.com/upgrade-linux-kernel-ubuntu">https://itsfoss.com/upgrade-linux-kernel-ubuntu</a></p>
+<p>wrong fs type,bad option,bad superlock &amp;</p>
+<p>dmesg | tail ： see parse_options()： Unrecognized mount option windows_names.<a target="_blank" rel="noopener" href="https://github.com/storaged-project/udisks/issues/932">https://github.com/storaged-project/udisks/issues/932</a></p>
+<p>ImportError： &#x2F;usr&#x2F;lib&#x2F;x86_64-linux-gnu&#x2F;libstdc++.so.6： version &#96;GLIBCXX_3.4.xx‘ not found<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30653631/article/details/107620137">https://blog.csdn.net/qq_30653631/article/details/107620137</a></p>
+<p>libstdc++.so.6：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38342510/article/details/140452160">https://blog.csdn.net/qq_38342510/article/details/140452160</a></p>
+<h4 id="3-Math"><a href="#3-Math" class="headerlink" title="3.Math"></a>3.Math</h4><p>凸优化：<a target="_blank" rel="noopener" href="https://www.zhihu.com/column/convex">https://www.zhihu.com/column/convex</a></p>
+<p> <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/270053227/answer/3138297987">https://www.zhihu.com/question/270053227/answer/3138297987</a></p>
+<p> <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/49689245/answer/3148945726">https://www.zhihu.com/question/49689245/answer/3148945726</a></p>
+<p> <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/68418633/answer/3178197426">https://www.zhihu.com/question/68418633/answer/3178197426</a></p>
+<p>一个大学生的日常笔记：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/28617379">https://zhuanlan.zhihu.com/p/28617379</a></p>
+<p>贝尔曼方程：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/86525700">https://zhuanlan.zhihu.com/p/86525700</a></p>
+<p>矩阵求导系列：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/263777564">https://zhuanlan.zhihu.com/p/263777564</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/273729929">https://zhuanlan.zhihu.com/p/273729929</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/288541909">https://zhuanlan.zhihu.com/p/288541909</a></p>
+<h4 id="4-Docker-VSCode"><a href="#4-Docker-VSCode" class="headerlink" title="4.Docker &amp; VSCode"></a>4.Docker &amp; VSCode</h4><p>vscode docker 插件权限：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/680737356">https://zhuanlan.zhihu.com/p/680737356</a></p>
+<p>docker pull：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2485043">https://cloud.tencent.com/developer/article/2485043</a></p>
+<p>修复 25.04 plucky 无 release 文件，无法更新源，尤其常发生在 manual 显卡驱动后：</p>
+<p>&#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F; 删除过时的 docker 相关</p>
+<p>完美解决 Error response from daemon: could not select device driver “” with capabilities: [[gpu]]</p>
+<p><a target="_blank" rel="noopener" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html</a> 装 nvidia-container-toolkit</p>
+<p>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</p>
+<p>sudo apt-get install -y nvidia-container-toolkit</p>
+<p>根据教程 vim &#x2F;etc&#x2F;os-release 修改为 24.10 jammy &amp; systemctl daemon-reload &amp; systemctl restart docker 即可</p>
+<p>openvino c++：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/21055820472">https://zhuanlan.zhihu.com/p/21055820472</a></p>
+<p>Error response from daemon： could not select device driver： <a target="_blank" rel="noopener" href="https://blog.csdn.net/li4692625/article/details/123015840">https://blog.csdn.net/li4692625/article/details/123015840</a></p>
+<p>修改ssh默认端口： <a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1253389">https://developer.aliyun.com/article/1253389</a></p>
+<p>vscode 修复Remote-SSH XHR failed： <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45654306/article/details/132047411">https://blog.csdn.net/qq_45654306/article/details/132047411</a> strip 参数很关键</p>
+<p>docker clean： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/386025157">https://zhuanlan.zhihu.com/p/386025157</a></p>
+<p>snap remove docker： <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/75604510/errno-13-permission-denied-%C2%B4-usr-lib-python3-10-pycache-future">https://stackoverflow.com/questions/75604510/errno-13-permission-denied-%C2%B4-usr-lib-python3-10-pycache-future</a></p>
+<p>ubuntu install docker engine： <a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></p>
+<p>各container明细： <a target="_blank" rel="noopener" href="https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-22-12.html">https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-22-12.html</a></p>
+<p>there-was-an-error-while-opening-file-handle： <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/68052984/there-was-an-error-while-opening-file-handle">https://stackoverflow.com/questions/68052984/there-was-an-error-while-opening-file-handle</a></p>
+<p>Error response from daemon： could not select device driver “” with capabilities： [[gpu]].： <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44966641/article/details/123760614">https://blog.csdn.net/weixin_44966641/article/details/123760614</a></p>
+<p>unsupported distribution： <a target="_blank" rel="noopener" href="https://blog.csdn.net/dou3516/article/details/130228298">https://blog.csdn.net/dou3516/article/details/130228298</a></p>
+<h4 id="5-Git"><a href="#5-Git" class="headerlink" title="5.Git"></a>5.Git</h4><p>git ssh key：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42310154/article/details/118340458">https://blog.csdn.net/weixin_42310154/article/details/118340458</a></p>
+<p>撤销 git add . ： git reset HEAD</p>
+<p>git clone –depth&#x3D;1：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ppblackboy/article/details/135914344">https://blog.csdn.net/ppblackboy/article/details/135914344</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30252465/article/details/125762378">https://blog.csdn.net/qq_30252465/article/details/125762378</a></p>
+<p>git file mode：git config –add core.filemode false</p>
+<p>git常用命令： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/105966867">https://zhuanlan.zhihu.com/p/105966867</a></p>
+<p>1.config： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/AhuntSun-blog/p/12679145.html">https://www.cnblogs.com/AhuntSun-blog/p/12679145.html</a></p>
+<p>① 暂存区还原至工作区的三种方法：</p>
+<p>git rm –cached 文件必须得经过一次提交</p>
+<p>git restore –stage</p>
+<p>git reset HEAD</p>
+<p>② 撤销工作区文件操作（修改、删除等）</p>
+<p>git checkout</p>
+<p>git restore</p>
+<p>③ 日志</p>
+<p>git log –graph –pretty&#x3D;oneline –abbrev-commit</p>
+<p>git log –all –decorate –oneline –graph 一次性查看所有分支及其提交记录</p>
+<p>git blame 查看修改日志</p>
+<p>git reflog 查看 git 相关操作日志</p>
+<p>2.rm diff reset restore rebase ：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/AhuntSun-blog/p/12685415.htmlrm">https://www.cnblogs.com/AhuntSun-blog/p/12685415.htmlrm</a></p>
+<p>① git rm</p>
+<p>git rm 删除版本库中的文件，如果删除工作区会报找不到文件的错误；删除暂存区则会说这些文件曾被改动</p>
+<p>git rm 完成了两步操作，删除版本库中文件+将删除操作纳入暂存区，下次提交删除完成</p>
+<p>② git diff</p>
+<p>diff -u a b 显示详细信息 —a 表示 a 为原文件 +++b 表示 b 为目标文件</p>
+<p>git diff &lt;暂存区&gt; &lt;工作区&gt; 的同一文件</p>
+<p>git diff commit_id 比较版本库与工作区的同一文件</p>
+<p>git diff HEAD 比较最新提交和工作区的同一文件</p>
+<p>git diff –cached commit_id 比较版本库和暂存区中的同一文件</p>
+<p>git diff –cached 比较最新提交和暂存区中的同一文件</p>
+<p>③ 撤销修改：</p>
+<p>暂存区恢复到工作区： 见1</p>
+<p>撤销工作区： git restore&#x2F;checkout</p>
+<p>git commit –amend -m “注释” 修改上一次的提交信息</p>
+<p>git rebase -i commit_id 显示 commit_id 之后的提交信息</p>
+<p>pick 可修改为 reword 直接修改提交注释；edit 停下 rebase 进程编辑提交，随后通过 git rebase –continue 继续进行 rebase</p>
+<p>git rebase -i HEAD~n 显示最近 n 次提交记录</p>
+<p>3.branch merge： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/AhuntSun-blog/p/12694197.html">https://www.cnblogs.com/AhuntSun-blog/p/12694197.html</a></p>
+<p>git branch -av 显示所有本地分支与本地远程分支以及对应分支上的最新提交信息</p>
+<p>git checkout - 切换回上一次分支</p>
+<p>git branch -m 分支重命名</p>
+<p>git branch -d 不能删除当前所在的分支，当需要删除的分支有master没有的内容且删前没有合并时会报错，则需要使用 -D 强行删除</p>
+<p>HEAD 指针指向当前分支；master 指针指向提交</p>
+<p>4.reset revert checkout： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/AhuntSun-blog/p/12700155.html">https://www.cnblogs.com/AhuntSun-blog/p/12700155.html</a></p>
+<p>① git reset HEAD^ 回退一次提交 HEAD^^ 两次 ~n n次</p>
+<p>–mixed 默认，文件回退到工作区，只保留工作区丢弃暂存区文件</p>
+<p>–sort 回退到暂存区，保留工作区和暂存区</p>
+<p>–hard 回退到修改前，丢弃工作区和暂存区</p>
+<p>② git revert –no-edit -n (-no-commit) 修改已被撤销，但重做的操作还未提交，可以随意修改重做过程中不满意的地方</p>
+<p>针对合并冲突使用 git mergetool</p>
+<p>③ git checkout 创建游离提交</p>
+<p>如果没有保存就从游离的提交上切换到其他分支，这一修改就会被 checkout 命令覆盖，所以在切换前需要进行一次提交；</p>
+<p>此时还会出现提示，如果没有任何分支指向刚才游离 commit 链中进行的提交，那么该提交就会被忽略，所以需要创建一个分支保存指向这条游离 commit 链： git branch</p>
+<p>综上，只有三种方式可以自由地前后回退： git reset –hard git revert git checkout</p>
+<p>④ git stash</p>
+<p>位于工作区和暂存区中的修改都会被 checkout 覆盖</p>
+<p>恢复通过 git stash 保存到 stash 中的修改可以通过 git stash list 查看该分支上被 stash 保存的修改</p>
+<p>git stash pop 恢复 stash 中存储的最新一次修改并从 stash 中删除</p>
+<p>git stash apply 取出 stash 中最新修改与分支合并，但 stash 中存储的该修改并不会被删除</p>
+<p>git stash apply stash@{n} 从 stash list 中恢复特定的修改，并且不删除 stash 中的该修改</p>
+<p>用 git stash save 继续保存修改</p>
+<p>5.git tag： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/AhuntSun-blog/p/12727188.html">https://www.cnblogs.com/AhuntSun-blog/p/12727188.html</a></p>
+<p>git log –all –decorate –oneline –graph</p>
+<p>git tag -a -m</p>
+<p>git tag list</p>
+<p>git show</p>
+<p>git tag -l</p>
+<p>git push origin –tag</p>
+<p>git push origin ： &#x2F; git push origin –delete</p>
+<p>git tag -d</p>
+<p>git checkout</p>
+<p>6.cherry-pick &amp; rebase： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/AhuntSun-blog/p/12732946.html">https://www.cnblogs.com/AhuntSun-blog/p/12732946.html</a></p>
+<p>cherry-pick： 先复制，再拼接 | 无论内容是否冲突，合并过程都会出现冲突</p>
+<p>git checkout + branch -d dev + checkout -b dev</p>
+<p>rebase -i： pick &#x2F; reword &#x2F; edit &#x2F; squash</p>
+<p>7.submodule &amp; subtree： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/AhuntSun-blog/p/12736934.html">https://www.cnblogs.com/AhuntSun-blog/p/12736934.html</a></p>
+<p>git submodule add</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Misc/" rel="tag"># Misc</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/02/22/Cpp/" rel="prev" title="Cpp">
+      <i class="fa fa-chevron-left"></i> Cpp
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/02/22/CV/" rel="next" title="CV">
+      CV <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Errors"><span class="nav-number">1.</span> <span class="nav-text">1.Errors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Ubuntu"><span class="nav-number">2.</span> <span class="nav-text">2.Ubuntu</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Math"><span class="nav-number">3.</span> <span class="nav-text">3.Math</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Docker-VSCode"><span class="nav-number">4.</span> <span class="nav-text">4.Docker &amp; VSCode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Git"><span class="nav-number">5.</span> <span class="nav-text">5.Git</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
