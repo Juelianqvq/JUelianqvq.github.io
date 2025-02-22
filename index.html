@@ -1298,7 +1298,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2025-02-22 19:57:50 / Modified: 19:59:16" itemprop="dateCreated datePublished" datetime="2025-02-22T19:57:50+08:00">2025-02-22</time>
+              <time title="Created: 2025-02-22 19:57:50 / Modified: 20:12:52" itemprop="dateCreated datePublished" datetime="2025-02-22T19:57:50+08:00">2025-02-22</time>
             </span>
 
           
@@ -1312,7 +1312,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="1-Pytorch"><a href="#1-Pytorch" class="headerlink" title="1.Pytorch"></a>1.Pytorch</h4><p>2.0 feature：</p>
+          <p>– <a href="#1.Pytorch">1.Pytorch</a></p>
+<p>– <a href="#2.Python">2.Python</a></p>
+<p>– [3.Magic Python](#3.Magic Python)</p>
+<h4 id="1-Pytorch"><a href="#1-Pytorch" class="headerlink" title="1.Pytorch"></a>1.Pytorch</h4><p>2.0 feature：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">torch._inductor.config.conv_1x1_as_mm = True # 默认 False</span><br><span class="line">torch._inductor.config.coordinate_descent_tuning = True # 默认 False</span><br><span class="line">torch._inductor.config.epilogue_fusion = False # 默认 True</span><br><span class="line">torch._inductor.config.coordinate_descent_check_all_directions = True # 默认 False</span><br><span class="line">torch._inductor.config.triton.unique_kernel_names = True # 默认 False</span><br><span class="line">torch._inductor.config.fx_graph_cache = True # 默认 True，减少编译时间</span><br><span class="line">torch._inductor.config.triton.cudagraphs=True # 默认 False</span><br><span class="line">torch._inductor.config.shape_padding = True # 默认 True</span><br><span class="line">torch._inductor.config.max_autotune = False # 默认 False</span><br><span class="line">torch._inductor.config.triton.cudagraph_trees = False # 默认 True</span><br><span class="line">torch._inductor.config.reorder_for_compute_comm_overlap = True # 默认 False</span><br><span class="line"></span><br><span class="line">torch._dynamo.config.automatic_dynamic_shapes = True # 默认 True</span><br><span class="line">torch._dynamo.config.cache_size_limit = 100000 # 默认 8</span><br><span class="line">torch._dynamo.config.optimize_ddp = False # 默认 True</span><br><span class="line"></span><br><span class="line">torch._functorch.config.enable_autograd_cache = True # 默认 False，减少编译时间</span><br><span class="line"></span><br><span class="line">torch.ops.aten._convert_weight_to_int4pack(weight_int32, inner_k_tiles)  # fp32 -&gt; uint8(kByte) -&gt; int4</span><br><span class="line">torch.ops.aten._weight_int4pack_mm(x, weight_int4pack, groupsize, scales_and_zeros)</span><br><span class="line"></span><br><span class="line">torch.profiler._utils._init_for_cuda_graphs()</span><br><span class="line">prof = torch.profiler.profile()</span><br></pre></td></tr></table></figure>
 
 <p>调参 trick：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/25097993/answer/2718208647">https://www.zhihu.com/question/25097993/answer/2718208647</a></p>
