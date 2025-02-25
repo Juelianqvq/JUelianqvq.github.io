@@ -400,7 +400,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-02-23 11:33:26" itemprop="dateModified" datetime="2025-02-23T11:33:26+08:00">2025-02-23</time>
+                <time title="Modified: 2025-02-24 13:08:45" itemprop="dateModified" datetime="2025-02-24T13:08:45+08:00">2025-02-24</time>
               </span>
 
           
@@ -476,6 +476,7 @@
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/288541909">https://zhuanlan.zhihu.com/p/288541909</a></p>
 <h4 id="4-Docker-VSCode"><a href="#4-Docker-VSCode" class="headerlink" title="4.Docker &amp; VSCode"></a>4.Docker &amp; VSCode</h4><p>vscode docker 插件权限：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/680737356">https://zhuanlan.zhihu.com/p/680737356</a></p>
 <p>docker pull：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2485043">https://cloud.tencent.com/developer/article/2485043</a></p>
+<p>sudo docker pull docker.xiaogenban1993.com&#x2F;lmsysorg&#x2F;sglang:dev</p>
 <p>修复 25.04 plucky 无 release 文件，无法更新源，尤其常发生在 manual 显卡驱动后：</p>
 <p>&#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F; 删除过时的 docker 相关</p>
 <p>完美解决 Error response from daemon: could not select device driver “” with capabilities: [[gpu]]</p>
@@ -752,10 +753,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-02-22 19:58:23 / Modified: 20:08:59" itemprop="dateCreated datePublished" datetime="2025-02-22T19:58:23+08:00">2025-02-22</time>
+              <time title="Created: 2025-02-22 19:58:23" itemprop="dateCreated datePublished" datetime="2025-02-22T19:58:23+08:00">2025-02-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-02-25 16:50:42" itemprop="dateModified" datetime="2025-02-25T16:50:42+08:00">2025-02-25</time>
+              </span>
 
           
 
@@ -795,6 +802,31 @@
 <p>部署提炼：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/23640350617">https://zhuanlan.zhihu.com/p/23640350617</a></p>
 <p>FP8：</p>
 <p><img src="/home/kwx/blog/source/_posts/assets/v2-00480748742764c41b4d2ce2463a0ac6_r.jpg" alt="v2-00480748742764c41b4d2ce2463a0ac6_r"></p>
+<p>MLA：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/25547444712">https://zhuanlan.zhihu.com/p/25547444712</a> 矩阵吸收详细推导</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/23897356975">https://zhuanlan.zhihu.com/p/23897356975</a> 奇异值分解</p>
+<p>矩阵吸收更适用于decode：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24402460724">https://zhuanlan.zhihu.com/p/24402460724</a></p>
+<p>MLA 分析：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24611547182">https://zhuanlan.zhihu.com/p/24611547182</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/25008909688">https://zhuanlan.zhihu.com/p/25008909688</a></p>
+<p>DeepSeek R1：</p>
+<p>开源复刻：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20685097446">https://zhuanlan.zhihu.com/p/20685097446</a></p>
+<p>4 阶段训练流程：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/22103896675">https://zhuanlan.zhihu.com/p/22103896675</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/19868935152">https://zhuanlan.zhihu.com/p/19868935152</a></p>
+<p>理论：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">理论上R1在vLLM/SGLang下都是overhead bound，因为如果是memory bound的话，8×H200按25TB/s的带宽（标称是每卡4.8TB/s，但有水分）算，bsz=1理应能跑600 token/s，大bsz全激活理应能跑30 token/s（且即使bsz=256也根本碰不到compute bound）。</span><br><span class="line"></span><br><span class="line">这里有问题，就是关于推理时expert paralelism的计算量。你高估了需要计算/从显存中获取的expert数目，实际上每一个token只要计算其中8个，而且有一个是固定分配的（降低调度复杂性）。目前直接vllm/sglang跑30token/s的低效率应该是由框架本身的低效率构成的。通过优化可以快不少。另外，目前不是因为纯粹的memory bound引发的问题，而是各种overhead巨大。</span><br><span class="line"></span><br><span class="line">主要造成吞吐量低的原因是单机上能跑的batch size过小，不足以用compute掩盖各种memory access开销。然后也没有实现多机expert parallelism附加上复杂的load balancing。另外，如果你单纯计算显存大小vs激活参数量开销，你立刻会察觉到即便在单机单序列上，30token/s连h200*8带宽显然没有打满，甚至单个gpu带宽也没有打满，更像是每次预测都全量加载了整个模型，当作一个完全dense的东西进行调度，根本不是简单的memory bound。。。这就是两大框架的没有充分优化之处。</span><br></pre></td></tr></table></figure>
+
+<p>KL 无偏估计：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/25208314999">https://zhuanlan.zhihu.com/p/25208314999</a> 顺着推导一遍</p>
+<p>非负性：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/77649148">https://zhuanlan.zhihu.com/p/77649148</a></p>
+<p>GRPO：</p>
+<p>on &#x2F; off policy：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/346433931">https://zhuanlan.zhihu.com/p/346433931</a></p>
+<p>拒绝采样推导：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/22069095829">https://zhuanlan.zhihu.com/p/22069095829</a></p>
+<p>DPO 简化 RLHF：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/671780768">https://zhuanlan.zhihu.com/p/671780768</a></p>
+<p>策略梯度证明：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/491647161">https://zhuanlan.zhihu.com/p/491647161</a></p>
+<p>RL 详细推导：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/21178712267">https://zhuanlan.zhihu.com/p/21178712267</a></p>
+<p>PPO vs GRPO：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/12014678391/answer/109385257077">https://www.zhihu.com/question/12014678391/answer/109385257077</a></p>
 <p>Triton：</p>
 <p>如果调用 JIT 编译的函数入参具有 .data_ptr() 方法和 .dtype 属性，则会隐式转换为指针。</p>
 <p>exp2：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/6874512980/answer/85865475090">https://www.zhihu.com/question/6874512980/answer/85865475090</a> 参看其他回答可能还能防止精度下溢</p>
@@ -840,6 +872,7 @@
 <p>千卡超时：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/712505336">https://zhuanlan.zhihu.com/p/712505336</a></p>
 <p>continuous batching： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/688551989">https://zhuanlan.zhihu.com/p/688551989</a></p>
 <p>bandwidthTest：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/703039225">https://zhuanlan.zhihu.com/p/703039225</a></p>
+<p>nvidia-smi topo -m &amp; nvidia-smi nvlink -i 0 s：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/18560601829">https://zhuanlan.zhihu.com/p/18560601829</a></p>
 <p>Pinned &amp; Pageable memory：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/662795350/answer/3576429708">https://www.zhihu.com/question/662795350/answer/3576429708</a></p>
 <p>面经：</p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/658609960">https://zhuanlan.zhihu.com/p/658609960</a> （Nvidia）</p>
@@ -848,6 +881,7 @@
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/716021841">https://zhuanlan.zhihu.com/p/716021841</a></p>
 <p>sft 细节：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/6497090767">https://zhuanlan.zhihu.com/p/6497090767</a></p>
 <p>O1 复现：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/8102196012">https://zhuanlan.zhihu.com/p/8102196012</a></p>
+<p>Android 1.5B：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20223625102">https://zhuanlan.zhihu.com/p/20223625102</a></p>
 <h5 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h5><ul>
 <li><p>split k： <a target="_blank" rel="noopener" href="https://blog.csdn.net/u013701860/article/details/128674224">https://blog.csdn.net/u013701860/article/details/128674224</a></p>
 </li>
@@ -872,6 +906,7 @@
 <p>KV Cache 稀疏化： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/701580870">https://zhuanlan.zhihu.com/p/701580870</a></p>
 <p>KV Cache 压缩评测： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/709684237">https://zhuanlan.zhihu.com/p/709684237</a></p>
 <p>fa变长使用： <a target="_blank" rel="noopener" href="https://66ring.github.io/2024/05/31/universe/ml/flash_attn_varlen_batcing_api_usage/">https://66ring.github.io/2024/05/31/universe/ml/flash_attn_varlen_batcing_api_usage/</a></p>
+<p>MoE 通信初探：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/658007181">https://zhuanlan.zhihu.com/p/658007181</a></p>
 <p>量化：</p>
 <p>GPTQ 推导：</p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/692338716">https://zhuanlan.zhihu.com/p/692338716</a></p>
